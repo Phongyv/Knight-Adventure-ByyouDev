@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     public void HandleJump()
     {
         moveVertical = joystick.Vertical;
-        if (moveVertical>0.4 && isGrounded) 
+        if (moveVertical>0.1 && isGrounded) 
         {
             audio.PlayJumpSound();
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHigh);

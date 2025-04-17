@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerGame : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class PlayerGame : MonoBehaviour
             textMeshPro.text = score.ToString();
             audio.PlayCoinSound();
             Destroy(collision.gameObject);
+            if(score == 4)
+            {
+                SceneManager.LoadScene("Menu");
+            }
         } else if (collision.CompareTag("Enemy"))
         {
             audio.PlayDeadSound();
